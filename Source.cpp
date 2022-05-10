@@ -38,7 +38,7 @@ int main()
 	SetConsoleCP(1251);
 
 	vector <string> stations;
-	
+
 
 	string str;
 	ifstream f1("stations.txt");
@@ -79,10 +79,16 @@ int main()
 		cout << stations[i] << endl;
 	}
 
-	cout << "¬ведите первую странцию: "; string a; getline(cin, a);
-	cout << "¬ведите вторую странцию: "; string b; getline(cin, b);
-	int aIndex;
-	int bIndex;
+	str = "";
+	string a, b;
+	ifstream f3("spbmetro.in");
+	getline(f3, a);
+	getline(f3, b);
+	cout << a << endl << b << endl;
+
+
+	int aIndex = 0;
+	int bIndex = 0;
 	for (int i = 0; i < stations.size(); i++)
 	{
 		if (stations[i] == a)
@@ -94,10 +100,13 @@ int main()
 			bIndex = i;
 		}
 	}
-		
+
 	vector<int> res = bfs(aIndex);
 
+	ofstream f4("spbmetro.out");
+	f4 << res[bIndex];
 	cout << res[bIndex];
+
 }
 
 
