@@ -73,7 +73,7 @@ int main()
 	c = stoi(str);
 	list[i].push_back(c);
 
-	//Вывод списка станций..
+	
 	for (int i = 0; i < stations.size(); i++)
 	{
 		cout << stations[i] << endl;
